@@ -7,7 +7,7 @@
     <version>0.0.6</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Standalone fully-featured Whatsapp Web API for Java and Kotlin</description>
-    <url>https://github.com/aleksandrchechenev/cobolt-connect</url>
+    <url>https://github.com/aleksandrchechenev/cobolt-connent</url>
 
     <licenses>
         <license>
@@ -21,7 +21,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/aleksandrchechenev/cobolt-connect</url>
+            <url>https://maven.pkg.github.com/aleksandrchechenev/cobolt-connent</url>
         </repository>
     </distributionManagement>
 

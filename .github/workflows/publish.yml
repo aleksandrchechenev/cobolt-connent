@@ -27,13 +27,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-#          server-id: github
-#          server-username: ${{ secrets.NAME }}
-#          server-password: ${{ secrets.TOKEN }}
-#          settings-path: ${{ github.workspace }}
 
-#      - name: Create settings.xml
-#        run:
       - name: Create settings.xml
         run: |
           echo "<settings>
