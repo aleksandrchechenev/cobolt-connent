@@ -26,8 +26,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           server-id: github
-          server-username: ${{ github.actor }}
-          server-password: ${{ secrets.GITHUB_TOKEN }}
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
           settings-path: ${{ github.workspace }}
 
       - name: Verify settings.xml
@@ -35,3 +35,6 @@ jobs:
 
       - name: Build and deploy
         run: mvn clean deploy -DskipTests --settings ${{ github.workspace }}/settings.xml
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
