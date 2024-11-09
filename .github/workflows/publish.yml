@@ -37,4 +37,4 @@ jobs:
         run: mvn clean deploy -DskipTests --settings ${{ github.workspace }}/settings.xml
         env:
           GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}

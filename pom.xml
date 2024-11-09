@@ -85,9 +85,9 @@
                         <configuration>
                             <annotationProcessorPaths>
                                 <annotationProcessorPath>
-                                    <groupId>${groupId}</groupId>
-                                    <artifactId>${artifactId}</artifactId>
-                                    <version>${version}</version>
+                                    <groupId>com.github.auties00</groupId>
+                                    <artifactId>cobalt</artifactId>
+                                    <version>0.0.6</version>
                                 </annotationProcessorPath>
                             </annotationProcessorPaths>
                             <annotationProcessors>
