@@ -17,12 +17,6 @@
         </license>
     </licenses>
 
-    <scm>
-        <url>https://github.com/aleksandrchechenev/cobolt-connect</url>
-        <connection>scm:git:https://github.com/aleksandrchechenev/cobolt-connect.git</connection>
-        <developerConnection>scm:git:https://github.com/aleksandrchechenev/cobolt-connect.git</developerConnection>
-    </scm>
-
     <distributionManagement>
         <repository>
             <id>github</id>
