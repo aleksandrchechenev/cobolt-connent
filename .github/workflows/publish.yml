@@ -26,8 +26,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           server-id: github
-          server-username: ${{env.GITHUB_ACTOR}}
-          server-password: ${{env.GITHUB_TOKEN}}
+          server-username: ${{ github.actor }}
+          server-password: ${{ secrets.GITHUB_TOKEN }}
           settings-path: ${{ github.workspace }}
 
       - name: Verify settings.xml
