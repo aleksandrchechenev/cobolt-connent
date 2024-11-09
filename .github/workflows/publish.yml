@@ -27,17 +27,30 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          server-id: github
-          server-username: ${{ NAME }}
-          server-password: ${{ TOKEN }}
-          settings-path: ${{ github.workspace }}
+      #          server-id: github
+      #          server-username: ${{ NAME }}
+      #          server-password: ${{ TOKEN }}
+      #          settings-path: ${{ github.workspace }}
+
+#      - name: Create settings.xml
+#        run:
+      - name: Create settings.xml
+        run: |
+          echo "<settings>
+                  <servers>
+                    <server>
+                      <id>github</id>
+                      <username>${{ secrets.NAME }}</username>
+                      <password>${{ secrets.TOKEN }}</password>
+                    </server>
+                  </servers>
+                </settings>" > ${{ github.workspace }}/settings.xml
+        env:
+          NAME: ${{ secrets.NAME }}
+          TOKEN: ${{ secrets.TOKEN }}
 
       - name: Verify settings.xml
         run: cat ${{ github.workspace }}/settings.xml
 
-#      - name: Build and deploy
-#        run: mvn clean deploy -DskipTests --settings ${{ github.workspace }}/settings.xml
-
-        env:
-          TOKEN: ${{ secrets.TOKEN }}
-          NAME: ${{ secrets.NAME }}
+        #      - name: Build and deploy
+        #        run: mvn clean deploy -DskipTests --settings ${{ github.workspace }}/settings.xml
