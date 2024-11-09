@@ -3,12 +3,14 @@ name: Publish to GitHub Packages
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -19,8 +21,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           server-id: github
-          server-username: ${{ secrets.GITHUB_ACTOR }}
-          server-password: ${{ secrets.GITHUB_TOKEN }}
+          server-username: ${{ env.GITHUB_ACTOR }}
+          server-password: ${{ env.GITHUB_TOKEN }}
           settings-path: ${{ github.workspace }}
 
       - name: Build and deploy
