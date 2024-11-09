@@ -25,7 +25,11 @@ jobs:
           server-password: ${{ secrets.GITHUB_TOKEN }}
           settings-path: ${{ github.workspace }}
 
+      - name: Verify settings.xml
+        run: cat ${{ github.workspace }}/settings.xml
+
       - name: Build and deploy
         run: mvn clean deploy -DskipTests --settings ${{ github.workspace }}/settings.xml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAVEN_USERNAME: ${{ github.actor }}
+          MAVEN_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
