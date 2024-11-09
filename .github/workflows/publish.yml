@@ -26,4 +26,5 @@ jobs:
       - name: Build and deploy
         run: mvn clean deploy -DskipTests
         env:
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
